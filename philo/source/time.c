@@ -25,8 +25,9 @@ int time_if_died(long int dead_time, long int last_meal)
 
 	new_time = phil_clockins();
 
-	if (new_time - last_meal >= dead_time)
-		return (0);
+	if (last_meal != 0)
+		if (new_time - last_meal >= dead_time)
+			return (0);
 	return (1);
 	//return (dead_time - (new_time - last_meal));
 }
